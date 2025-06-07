@@ -10,9 +10,10 @@ ___
 ## Tips:
 - Commit to your repository often. Even if you make small tweaks to your code, it’s best to be committing to your repository frequently.
 - The subject of the custom object is up to you. Feel free to get creative!
-- Please create a test account and include your private app access token in your repo.
+- Please create a test account and include your private app access token in your local repo.
 - Ensure you re-merge any working branches into the main branch.
-- DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR REPOSITORY. 
+- DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR GITHUB REPOSITORY.
+  (Add .env to GIT's .gitignore to prevent uploading the private app auth tokens to GitHub.) 
 
 ## Pre-requisites:
 - Using [Node](https://nodejs.org/en/download) and node packages
