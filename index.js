@@ -25,7 +25,6 @@ app.get('/', async (req, res) => {
   try {
     const response = await axios.get(apiUrl, { headers });
     const data = response.data.results;
-    console.log(JSON.stringify(data, null, 2));
     res.render('homepage', {
       title: 'Video Games | HubSpot Practicum',
       data,
