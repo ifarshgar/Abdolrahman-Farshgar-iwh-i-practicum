@@ -38,3 +38,9 @@ ___
 - All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
 - You must have at least two new routes in your index.js file and one new pug template for the homepage.
 - You must create a developer test account and link to it in your README.md file. Submissions that do not meet this requirement will not be considered.
+
+<br />
+<br />
+
+<img src="./images/Screenshot 2025-06-08 at 17.36.27.png" alt="completed app dashboard" />
+<img src="./images/Screenshot 2025-06-08 at 17.36.32.png" alt="completed app add form" />
