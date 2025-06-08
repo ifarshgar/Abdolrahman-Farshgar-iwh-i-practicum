@@ -10,11 +10,13 @@ app.use(express.json());
 
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = HUBSPOT_AUTH_TOKEN;
-const CUSTOM_OBJECT_TYPE = 'video_games';
+const CUSTOM_OBJECT_TYPE = '2-143620620';
+const BASE_URL = 'https://api.hubapi.com/crm/v3/objects/';
+const PROPERTIES = '?properties=name, genre, price';
 
 // ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 app.get('/', async (req, res) => {
-  const apiUrl = `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_TYPE}`;
+  const apiUrl = `${BASE_URL}/${CUSTOM_OBJECT_TYPE}${PROPERTIES}`;
   const headers = {
     Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
     'Content-Type': 'application/json',
@@ -23,15 +25,16 @@ app.get('/', async (req, res) => {
   try {
     const response = await axios.get(apiUrl, { headers });
     const data = response.data.results;
+    console.log(JSON.stringify(data, null, 2));
     res.render('homepage', {
-      title: 'Custom Objects | HubSpot Practicum',
+      title: 'Video Games | HubSpot Practicum',
       data,
-      objectType: CUSTOM_OBJECT_TYPE,
+      objectType: 'Video Games',
     });
   } catch (error) {
     console.error(error);
     res.render('homepage', {
-      title: 'Custom Objects | HubSpot Practicum',
+      title: 'Video Games | HubSpot Practicum',
       error: 'Failed to load data',
     });
   }
@@ -46,7 +49,7 @@ app.get('/update/video-game', (req, res) => {
 
 // ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 app.post('/update/video-game', async (req, res) => {
-  const apiUrl = `https://api.hubapi.com/crm/v3/objects/${CUSTOM_OBJECT_TYPE}`;
+  const apiUrl = `${BASE_URL}/${CUSTOM_OBJECT_TYPE}`;
   const headers = {
     Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
     'Content-Type': 'application/json',

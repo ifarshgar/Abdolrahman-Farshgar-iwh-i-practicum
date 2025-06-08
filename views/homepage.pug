@@ -6,6 +6,8 @@ html(lang="en")
   body
     h1 Custom Object Records (#{objectType})
     a(href="/update/video-game") Add New Record
+    br
+    br
     
     if error
       p.error= error
@@ -24,4 +26,4 @@ html(lang="en")
               td= record.properties.price
     else
       p No records found. 
-        a(href="/update/video-game") Add your first record
+
