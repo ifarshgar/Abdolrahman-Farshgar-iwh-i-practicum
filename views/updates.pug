@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Create New Custom Object Record
+    a(href="/") ← Back to homepage
+    
+    if error
+      p.error= error
+    
+    form(method="POST", action="/update/video-game")
+      div.form-group
+        label(for="name") Name:
+        input(type="text", id="name", name="name", required)
+      
+      div.form-group
+        label(for="genre") Genre:
+        input(type="text", id="genre", name="genre")
+      
+      div.form-group
+        label(for="price") Price ($):
+        input(type="number", id="price", name="price", step="0.01")
+      
+      button(type="submit") Create Record

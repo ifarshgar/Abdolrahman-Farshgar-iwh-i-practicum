@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js",
         "createSchema": "node createCustomSchema.js"
     },
     "author": "HubSpot Academy learner",

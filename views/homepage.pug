@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Custom Object Records (#{objectType})
+    a(href="/update/video-game") Add New Record
+    
+    if error
+      p.error= error
+    else if records && records.length > 0
+      table
+        thead
+          tr
+            th Name
+            th Genre
+            th Price
+        tbody
+          each record in records
+            tr
+              td= record.properties.name
+              td= record.properties.genre
+              td= record.properties.price
+    else
+      p No records found. 
+        a(href="/update/video-game") Add your first record
