@@ -11,7 +11,7 @@ html(lang="en")
     
     if error
       p.error= error
-    else if records && records.length > 0
+    else if data && data.length > 0
       table
         thead
           tr
@@ -19,7 +19,7 @@ html(lang="en")
             th Genre
             th Price
         tbody
-          each record in records
+          each record in data
             tr
               td= record.properties.name
               td= record.properties.genre
